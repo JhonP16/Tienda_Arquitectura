@@ -30,6 +30,8 @@ services:
       - DB_PASSWORD=secret_password
       - DB_HOST=db  # ¡OJO! Aquí usamos el nombre del servicio 'db' como host
       - DB_PORT=5432
+      # Permite servir la API desde la IP publica de EC2
+      - DJANGO_ALLOWED_HOSTS=*
 
 # Definición del volumen persistente
 volumes:

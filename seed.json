@@ -1,0 +1,74 @@
+[
+  {
+    "model": "tienda_app.libro",
+    "pk": 0,
+    "fields": {
+      "titulo": "Cien años de Soledad",
+      "precio": "155"
+    }
+  },
+  {
+    "model": "tienda_app.libro",
+    "pk": 1,
+    "fields": {
+      "titulo": "Harry Potter y La Orden del Fénix",
+      "precio": "132"
+    }
+  },
+  {
+    "model": "tienda_app.libro",
+    "pk": 2,
+    "fields": {
+      "titulo": "Clean Code en Python",
+      "precio": "150"
+    }
+  },
+  {
+    "model": "tienda_app.libro",
+    "pk": 3,
+    "fields": {
+      "titulo": "Refactoring",
+      "precio": "180"
+    }
+  },
+  {
+    "model": "tienda_app.libro",
+    "pk": 4,
+    "fields": {
+      "titulo": "Design Patterns",
+      "precio": "200"
+    }
+  },
+  {
+    "model": "tienda_app.inventario",
+    "pk": 0,
+    "fields": {
+      "libro": 0,
+      "cantidad": 0
+    }
+  },
+  {
+    "model": "tienda_app.inventario",
+    "pk": 1,
+    "fields": {
+      "libro": 2,
+      "cantidad": 8
+    }
+  },
+  {
+    "model": "tienda_app.inventario",
+    "pk": 2,
+    "fields": {
+      "libro": 3,
+      "cantidad": 0
+    }
+  },
+  {
+    "model": "tienda_app.inventario",
+    "pk": 3,
+    "fields": {
+      "libro": 4,
+      "cantidad": 1
+    }
+  }
+]
