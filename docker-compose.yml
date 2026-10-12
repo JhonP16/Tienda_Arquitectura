@@ -31,6 +31,12 @@ services:
       - DJANGO_ALLOWED_HOSTS=*
     # NOTA: Ya no hay sección 'ports' aquí. Django está aislado de internet.
 
+  # Microservicio de pagos (v2) - EL ESTRANGULADOR
+  pagos_flask:
+    build: ./microservicio_pagos
+    ports:
+      - "5000:5000"  # Solo para pruebas iniciales, luego lo cerraremos
+
   # Proxy Inverso: el único servicio que da la cara a internet
   nginx:
     image: nginx:1.25-alpine
@@ -41,6 +47,7 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - web
+      - pagos_flask
 
 # Definición del volumen persistente
 volumes:

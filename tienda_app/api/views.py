@@ -2,6 +2,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from tienda_app.models import Libro
 from tienda_app.infra.factories import PaymentFactory
 from tienda_app.services import CompraService
 
@@ -45,3 +46,17 @@ class CompraAPIView(APIView):
             return Response({'error': str(e)}, status=status.HTTP_409_CONFLICT)
         except Exception:
             return Response({'error': 'Error interno'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class ProductoListAPIView(APIView):
+    """
+    Lista de productos (monolito Django, v1).
+    GET /api/v1/productos/
+    """
+
+    def get(self, request):
+        productos = [
+            {"id": l.id, "titulo": l.titulo, "precio": str(l.precio)}
+            for l in Libro.objects.all()
+        ]
+        return Response(productos)
